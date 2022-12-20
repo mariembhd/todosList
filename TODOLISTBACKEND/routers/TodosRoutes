@@ -1,0 +1,14 @@
+const express = require('express');
+const { model } = require('mongoose');
+const router = express.Router();
+const TodosController = require('./TodosController') ;
+
+
+router.get('/lister',TodosController.ListerTodos) ;
+router.post('/ajouter',TodosController.AjouterTodos) ;
+router.get('/:id/supprimer',TodosController.SupprimerTodos) ;
+router.post('/:id/modifier',TodosController.ModifierTodos) ;
+
+
+
+module.exports = router ;
